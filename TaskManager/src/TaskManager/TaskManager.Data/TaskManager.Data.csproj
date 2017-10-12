@@ -78,6 +78,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Migrations\201710120814235_Initial_Create.cs" />
+    <Compile Include="Migrations\201710120814235_Initial_Create.Designer.cs">
+      <DependentUpon>201710120814235_Initial_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +94,11 @@
       <Project>{dabf7bdf-f43a-4054-b862-d06a35bf7f95}</Project>
       <Name>TaskManager.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201710120814235_Initial_Create.resx">
+      <DependentUpon>201710120814235_Initial_Create.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
