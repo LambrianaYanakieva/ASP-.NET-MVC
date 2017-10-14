@@ -11,9 +11,9 @@ namespace TaskManager.Web.Controllers
 {
     public class TasksController : Controller
     {
-        private TaskListService service;
+        private TaskService service;
 
-        public TasksController(TaskListService taskService)
+        public TasksController(TaskService taskService)
         {
             this.service = taskService;
         }
@@ -21,12 +21,20 @@ namespace TaskManager.Web.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var taskCollection = service.GetAll().Select(x => new TaskViewModel()
+            {
+                Title = x.Title,
+                Content = x.Content,
+                
+            }).ToList();
+
+            return View(taskCollection);
         }
 
         [HttpPost]
         public ActionResult Create(TaskModel model)
         {
+            model.Username = service.GetUsername();
             this.service.AddTask(model);
             return RedirectToAction("Index");
         }

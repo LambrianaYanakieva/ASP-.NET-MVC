@@ -60,7 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TaskServices\TaskListService.cs" />
+    <Compile Include="TaskServices\TaskService.cs" />
     <Compile Include="UserServices\UserService.cs" />
   </ItemGroup>
   <ItemGroup>

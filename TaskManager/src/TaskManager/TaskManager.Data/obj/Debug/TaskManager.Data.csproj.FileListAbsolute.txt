@@ -114,4 +114,4 @@ C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Data\bi
 C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Data\bin\Debug\TaskManager.Data.Common.dll.config
 C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Data\obj\Debug\TaskManager.Data.Migrations.InitialCreate.resources
 C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Data\obj\Debug\TaskManager.Data.csproj.GenerateResource.Cache
-C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Data\obj\Debug\TaskManager.Data.Migrations.Tasks.resources
+C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Data\obj\Debug\TaskManager.Data.Migrations.Task.resources

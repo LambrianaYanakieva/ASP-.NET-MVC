@@ -103,9 +103,9 @@
     <Compile Include="Migrations\201710140807096_InitialCreate.Designer.cs">
       <DependentUpon>201710140807096_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710140807513_Tasks.cs" />
-    <Compile Include="Migrations\201710140807513_Tasks.Designer.cs">
-      <DependentUpon>201710140807513_Tasks.cs</DependentUpon>
+    <Compile Include="Migrations\201710141415559_Task.cs" />
+    <Compile Include="Migrations\201710141415559_Task.Designer.cs">
+      <DependentUpon>201710141415559_Task.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,8 +128,8 @@
     <EmbeddedResource Include="Migrations\201710140807096_InitialCreate.resx">
       <DependentUpon>201710140807096_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710140807513_Tasks.resx">
-      <DependentUpon>201710140807513_Tasks.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710141415559_Task.resx">
+      <DependentUpon>201710141415559_Task.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

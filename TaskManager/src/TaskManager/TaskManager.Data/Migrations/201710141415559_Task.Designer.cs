@@ -7,13 +7,13 @@ namespace TaskManager.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Tasks : IMigrationMetadata
+    public sealed partial class Task : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Tasks));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Task));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710140807513_Tasks"; }
+            get { return "201710141415559_Task"; }
         }
         
         string IMigrationMetadata.Source

@@ -10,13 +10,13 @@ using TaskManager.Models;
 
 namespace TaskManager.Services.TaskServices
 {
-    public class TaskListService
+    public class TaskService
     {
         private IDbRepository<TaskModel> taskRepo;
         private IPrincipal identity;
         private ISaveContext saveContext;
 
-        public TaskListService(IDbRepository<TaskModel> taskRepo, IPrincipal identity
+        public TaskService(IDbRepository<TaskModel> taskRepo, IPrincipal identity
             ,ISaveContext saveContext)
         {
             this.taskRepo = taskRepo;
@@ -26,14 +26,21 @@ namespace TaskManager.Services.TaskServices
 
         public IQueryable<TaskModel> GetAll()
         {
-            return this.taskRepo.All().Where(m => m.User.Email.ToLower() ==
+            return this.taskRepo.All().Where(m => m.Username.ToLower() ==
             this.identity.Identity.Name.ToLower());
         }
 
         public void AddTask(TaskModel model)
         {
+            model.Username = this.identity.Identity.Name;
+           
             this.taskRepo.Add(model);
             this.saveContext.Commit();
+        }
+
+        public string GetUsername()
+        {
+            return this.identity.Identity.Name;
         }
     }
 }
