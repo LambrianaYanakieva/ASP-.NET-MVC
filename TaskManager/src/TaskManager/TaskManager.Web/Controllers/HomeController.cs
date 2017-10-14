@@ -13,9 +13,9 @@
             return this.View();
         }
 
-        public ActionResult About()
+        public ActionResult Tasks()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your Tasks.";
 
             return this.View();
         }

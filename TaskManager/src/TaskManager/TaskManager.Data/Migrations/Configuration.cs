@@ -6,7 +6,7 @@ namespace TaskManager.Data.Migrations
     using System.Linq;
     using TaskManager.Models;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<TaskManager.Data.ApplicationDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<TaskManager.Data.ApplicationDbContext>
     {
         public Configuration()
         {
