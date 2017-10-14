@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 using TaskManager.Data.Common.Context.Save.Contracts;
 using TaskManager.Data.Common.Repositories.Contracts;
 using TaskManager.Models;
+using TaskManager.Services.TaskServices.Contracts;
 
 namespace TaskManager.Services.TaskServices
 {
-    public class TaskService
+    public class TaskService : ITaskService
     {
         private IDbRepository<TaskModel> taskRepo;
         private IPrincipal identity;

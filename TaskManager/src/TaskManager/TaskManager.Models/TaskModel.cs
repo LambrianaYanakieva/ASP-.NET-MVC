@@ -10,10 +10,6 @@ namespace TaskManager.Models
 {
     public class TaskModel : BaseModel<int>
     {
-
-
-        
-
         public TaskModel()
         {
           
@@ -32,6 +28,5 @@ namespace TaskManager.Models
 
         public string Username { get; set; }
                                      
-
     }
 }
