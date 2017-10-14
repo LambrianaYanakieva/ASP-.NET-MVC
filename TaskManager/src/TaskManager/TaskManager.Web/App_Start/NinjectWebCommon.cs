@@ -19,6 +19,8 @@ namespace TaskManager.Web.App_Start
     using System.Security.Principal;
     using TaskManager.Services.TaskServices;
     using TaskManager.Services.TaskServices.Contracts;
+    using TaskManager.Services.UserServices.Contracts;
+    using TaskManager.Services.UserServices;
 
     public static class NinjectWebCommon
     {
@@ -77,6 +79,7 @@ namespace TaskManager.Web.App_Start
                  .ToMethod(ctx => HttpContext.Current.User)
                  .InRequestScope();
             kernel.Bind<ITaskService>().To<TaskService>().InRequestScope();
+            kernel.Bind<IUserService>().To<UserService>().InRequestScope();
         }
     }
 }

@@ -2,7 +2,9 @@
     padding-top: 50px;
     padding-bottom: 20px;
     background-image: url('../Images/green-background.PNG');
-   
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -24,3 +26,19 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+
+

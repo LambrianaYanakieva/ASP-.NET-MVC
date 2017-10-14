@@ -75,6 +75,9 @@ C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\
 C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\bin\Debug\System.Web.WebPages.Deployment.dll
 C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\bin\Debug\System.Web.WebPages.dll
 C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\bin\Debug\TaskManager.Data.Common.dll
+C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\bin\Debug\TaskManager.Data.Common.pdb
+C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\bin\Debug\TaskManager.Data.Common.dll.config
 C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\bin\Debug\EntityFramework.xml
 C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
@@ -95,6 +98,3 @@ C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\
 C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\obj\Debug\TaskManager.Models.csproj.CoreCompileInputs.cache
 C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\obj\Debug\TaskManager.Models.dll
 C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\obj\Debug\TaskManager.Models.pdb
-C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\bin\Debug\TaskManager.Data.Common.dll
-C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\bin\Debug\TaskManager.Data.Common.pdb
-C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Models\bin\Debug\TaskManager.Data.Common.dll.config

@@ -4,17 +4,17 @@
 
 <div class="jumbotron">
     <h1>Task Manager</h1>
-    <p class="lead">Wellcome!</p>
-   
-</div>
 
-<div class="row">
     @if (this.User.Identity.IsAuthenticated)
     {
-       <p>@Html.ActionLink("Go to tasks", "Index", "Tasks")</p>
+
+       <p class="btn-txt">@Html.ActionLink("Go to tasks", "Index", "Tasks",null, new { @class="button" })</p>
+      
     }
     else
     {
         <h2>Login into your account to see your tasks</h2>
     }
+   
 </div>
+
