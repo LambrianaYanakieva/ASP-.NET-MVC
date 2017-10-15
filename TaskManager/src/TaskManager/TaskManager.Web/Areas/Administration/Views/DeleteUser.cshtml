@@ -1,0 +1,8 @@
+﻿@using (Html.BeginForm("Index", "Delete", FormMethod.Post, new { @class = "delete-user" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <input type="submit" value="Create task" />
+    </fieldset>
+}
+

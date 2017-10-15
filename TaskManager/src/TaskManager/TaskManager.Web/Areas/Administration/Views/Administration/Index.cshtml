@@ -1,6 +1,27 @@
-﻿
+﻿@model IEnumerable<TaskManager.Web.Areas.Administration.Models.UserViewModel>
 
-<h2>Administration</h2>
+<div>
+    <ul>
+        @foreach (var user in Model)
+        {
+
+            <li class="glyphicon-user">               
+                @using (Html.BeginForm("Delete", "Administration", FormMethod.Post, new { @class = "delete-user" }))
+                {
+                    @Html.ValidationSummary(true)
+                    <fieldset>
+                        @user.Username<input type="hidden" name="userName" value="@user.Username" />
+                        <input type="submit" value="X">
+                    </fieldset>
+                }
+            </li>
+        }
+    </ul>
+</div>
+
+
+
+
 
 
 

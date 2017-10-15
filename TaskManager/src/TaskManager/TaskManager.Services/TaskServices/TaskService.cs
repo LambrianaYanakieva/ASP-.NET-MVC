@@ -25,10 +25,10 @@ namespace TaskManager.Services.TaskServices
             this.saveContext = saveContext; 
         }
 
-        public IQueryable<TaskModel> GetAll()
+        public List<TaskModel> GetAll()
         {
             return this.taskRepo.All().Where(m => m.Username.ToLower() ==
-            this.identity.Identity.Name.ToLower());
+            this.identity.Identity.Name.ToLower()).ToList();
         }
 
         public void AddTask(TaskModel model)

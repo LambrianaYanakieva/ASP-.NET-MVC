@@ -9,7 +9,7 @@ namespace TaskManager.Services.TaskServices.Contracts
 {
     public interface ITaskService
     {
-        IQueryable<TaskModel> GetAll();
+        List<TaskModel> GetAll();
 
         void AddTask(TaskModel model);
 

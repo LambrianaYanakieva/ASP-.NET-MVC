@@ -80,6 +80,7 @@ namespace TaskManager.Web.App_Start
                  .InRequestScope();
             kernel.Bind<ITaskService>().To<TaskService>().InRequestScope();
             kernel.Bind<IUserService>().To<UserService>().InRequestScope();
+            kernel.Bind(typeof(IUserRepository<>)).To(typeof(UserRepository<>)).InRequestScope();
         }
     }
 }

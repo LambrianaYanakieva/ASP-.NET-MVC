@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TaskManager.Models;
 
 namespace TaskManager.Services.UserServices.Contracts
 {
     public interface IUserService
     {
-        List<ApplicationUser> All { get; }
+        ICollection<ApplicationUser> GetAllUsers();
+
+        void DeleteUser(string username);
     }
 }

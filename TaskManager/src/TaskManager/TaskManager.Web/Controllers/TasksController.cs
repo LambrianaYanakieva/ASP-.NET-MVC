@@ -1,27 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Bytes2you.Validation;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using TaskManager.Models;
 using TaskManager.Services.TaskServices;
+using TaskManager.Services.TaskServices.Contracts;
 using TaskManager.Web.Models.Task;
 
 namespace TaskManager.Web.Controllers
 {
     public class TasksController : Controller
     {
-        private TaskService service;
+        private ITaskService taskService;
 
-        public TasksController(TaskService taskService)
+        public TasksController(ITaskService taskService)
         {
-            this.service = taskService;
+            Guard.WhenArgument(taskService,"TaskService").IsNull().Throw();
+            this.taskService = taskService;
         }
 
 
         public ActionResult Index()
         {
-            var taskCollection = service.GetAll().Select(x => new TaskViewModel()
+            var taskCollection = taskService.GetAll().Select(x => new TaskViewModel()
             {
                 Title = x.Title,
                 Content = x.Content,
@@ -34,8 +34,8 @@ namespace TaskManager.Web.Controllers
         [HttpPost]
         public ActionResult Create(TaskModel model)
         {
-            model.Username = service.GetUsername();
-            this.service.AddTask(model);
+            model.Username = taskService.GetUsername();
+            this.taskService.AddTask(model);
             return RedirectToAction("Index");
         }
 
