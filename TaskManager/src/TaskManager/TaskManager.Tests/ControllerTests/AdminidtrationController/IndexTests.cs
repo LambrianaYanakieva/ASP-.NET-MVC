@@ -20,5 +20,11 @@ namespace TaskManager.Tests.ControllerTests.AdminidtrationController
 
 
         }
+
+        [TestMethod]
+        public void Test()
+        {
+
+        }
     }
 }
