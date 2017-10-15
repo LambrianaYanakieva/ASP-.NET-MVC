@@ -35,3 +35,4 @@ C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Service
 C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Services\bin\Debug\System.Web.WebPages.xml
 C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Services\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Services\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\PC\Desktop\ASP-.NET-MVC\TaskManager\src\TaskManager\TaskManager.Services\bin\Debug\Bytes2you.Validation.dll

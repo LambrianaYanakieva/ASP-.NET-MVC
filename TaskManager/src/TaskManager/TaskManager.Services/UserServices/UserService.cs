@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Bytes2you.Validation;
+using System.Collections.Generic;
 using System.Linq;
 using TaskManager.Data.Common.Repositories.Contracts;
 using TaskManager.Models;
@@ -12,6 +13,7 @@ namespace TaskManager.Services.UserServices
 
         public UserService(IUserRepository<ApplicationUser> userRepo)
         {
+            Guard.WhenArgument(userRepo, "userService").IsNull().Throw();
             this.userRepo = userRepo;
         }
 
