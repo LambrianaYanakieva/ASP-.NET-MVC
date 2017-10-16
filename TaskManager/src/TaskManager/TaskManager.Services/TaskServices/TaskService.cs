@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bytes2you.Validation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
@@ -20,6 +21,10 @@ namespace TaskManager.Services.TaskServices
         public TaskService(IDbRepository<TaskModel> taskRepo, IPrincipal identity
             ,ISaveContext saveContext)
         {
+            Guard.WhenArgument(taskRepo, "dbRepository").IsNull().Throw();
+            Guard.WhenArgument(identity, "principal").IsNull().Throw();
+            Guard.WhenArgument(saveContext, "saveContext").IsNull().Throw();
+
             this.taskRepo = taskRepo;
             this.identity = identity;
             this.saveContext = saveContext; 
