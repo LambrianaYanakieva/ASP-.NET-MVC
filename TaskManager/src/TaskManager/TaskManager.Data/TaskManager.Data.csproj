@@ -107,6 +107,10 @@
     <Compile Include="Migrations\201710141415559_Task.Designer.cs">
       <DependentUpon>201710141415559_Task.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710160813551_Pesho.cs" />
+    <Compile Include="Migrations\201710160813551_Pesho.Designer.cs">
+      <DependentUpon>201710160813551_Pesho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -130,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710141415559_Task.resx">
       <DependentUpon>201710141415559_Task.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710160813551_Pesho.resx">
+      <DependentUpon>201710160813551_Pesho.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

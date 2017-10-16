@@ -22,6 +22,7 @@
 
         public IDbSet<TaskModel> Task { get; set; }
 
+
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();
