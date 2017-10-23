@@ -8,5 +8,6 @@ namespace TaskManager.Web.Areas.Administration.Models
     public class UserViewModel
     {
         public string Username { get; set; }
+        public bool isDeleted { get; set; }
     }
 }

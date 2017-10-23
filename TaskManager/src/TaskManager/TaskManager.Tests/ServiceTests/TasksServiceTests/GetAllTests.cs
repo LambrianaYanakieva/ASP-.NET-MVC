@@ -10,6 +10,7 @@ using TaskManager.Data.Common.Context.Save.Contracts;
 using TaskManager.Data.Common.Repositories.Contracts;
 using TaskManager.Models;
 using TaskManager.Services.TaskServices;
+using TaskManager.Services.UserServices.Contracts;
 
 namespace TaskManager.Tests.ServiceTests.TasksServiceTests
 {
@@ -22,13 +23,14 @@ namespace TaskManager.Tests.ServiceTests.TasksServiceTests
             var taskRepositoryMocked = new Mock<IDbRepository<TaskModel>>();
             var identityMocked = new Mock<IPrincipal>();
             var saveContextMocked = new Mock<ISaveContext>();
-            
+            var userServiceMocked = new Mock<IUserService>();
+
             var tasks = new List<TaskModel>();
 
             taskRepositoryMocked.Setup(x => x.All()).Returns(tasks.AsQueryable());
 
             var service = new TaskService(taskRepositoryMocked.Object,
-                identityMocked.Object, saveContextMocked.Object);
+                identityMocked.Object, saveContextMocked.Object, userServiceMocked.Object);
 
             service.GetAll();
 

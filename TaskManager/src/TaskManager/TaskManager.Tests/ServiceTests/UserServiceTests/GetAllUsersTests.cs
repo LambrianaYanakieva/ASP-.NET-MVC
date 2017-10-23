@@ -3,6 +3,7 @@ using Moq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using TaskManager.Data.Common.Repositories.Contracts;
@@ -18,12 +19,13 @@ namespace TaskManager.Tests.ServiceTests.UserServiceTests
         public void GetAllUsers_ShouldCall_MethodAll_Once()
         {
             var repoMocked = new Mock<IUserRepository<ApplicationUser>>();
+            var identityMocked = new Mock<IPrincipal>();
 
             var users = new List<ApplicationUser>();
 
             repoMocked.Setup(m => m.All()).Returns(users.AsQueryable());
 
-            var service = new UserService(repoMocked.Object);
+            var service = new UserService(repoMocked.Object, identityMocked.Object);
 
             service.GetAllUsers();
 

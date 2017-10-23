@@ -10,6 +10,7 @@ using TaskManager.Data.Common.Context.Save.Contracts;
 using TaskManager.Data.Common.Repositories.Contracts;
 using TaskManager.Models;
 using TaskManager.Services.TaskServices;
+using TaskManager.Services.UserServices.Contracts;
 
 namespace TaskManager.Tests.ServiceTests.TasksServiceTests
 {
@@ -22,17 +23,17 @@ namespace TaskManager.Tests.ServiceTests.TasksServiceTests
             var taskRepositoryMocked = new Mock<IDbRepository<TaskModel>>();
             var identityMocked = new Mock<IPrincipal>();
             var saveContextMocked = new Mock<ISaveContext>();
-
+            var userServiceMocked = new Mock<IUserService>();
             identityMocked.Setup(x => x.Identity.Name).Returns("Pesho");
 
             var tasks = new List<TaskModel>();
 
             var service = new TaskService(taskRepositoryMocked.Object,
-                identityMocked.Object, saveContextMocked.Object);
+                identityMocked.Object, saveContextMocked.Object, userServiceMocked.Object);
 
             var model = new TaskModel();
 
-            model.Username = identityMocked.Name;
+            //model.Username = identityMocked.Name;
 
             service.AddTask(model);
 
@@ -45,17 +46,18 @@ namespace TaskManager.Tests.ServiceTests.TasksServiceTests
             var taskRepositoryMocked = new Mock<IDbRepository<TaskModel>>();
             var identityMocked = new Mock<IPrincipal>();
             var saveContextMocked = new Mock<ISaveContext>();
+            var userServiceMocked = new Mock<IUserService>();
 
             identityMocked.Setup(x => x.Identity.Name).Returns("Pesho");
 
             var tasks = new List<TaskModel>();
 
             var service = new TaskService(taskRepositoryMocked.Object,
-                identityMocked.Object, saveContextMocked.Object);
+                identityMocked.Object, saveContextMocked.Object, userServiceMocked.Object);
 
             var model = new TaskModel();
 
-            model.Username = identityMocked.Name;
+            //model.Username = identityMocked.Name;
 
             service.AddTask(model);
 

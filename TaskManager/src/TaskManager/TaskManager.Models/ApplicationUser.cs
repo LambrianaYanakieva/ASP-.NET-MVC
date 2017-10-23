@@ -10,9 +10,10 @@
     using System.Threading.Tasks;
     using System.Web;
     using TaskManager.Data.Common.Base;
+    using TaskManager.Data.Common.Base.Contracts;
 
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
-    public class ApplicationUser : IdentityUser
+    public class ApplicationUser : IdentityUser, IAuditInfo, IDeletableEntity
     {
         private ICollection<TaskModel> tasks;
 
@@ -43,5 +44,13 @@
                 this.tasks = value;
             }
         }
+
+        public DateTime CreatedOn { get; set; }
+
+        public DateTime? ModifiedOn { get; set; }
+
+        public bool IsDeleted { get; set; }
+
+        public DateTime? DeletedOn { get; set; }
     }
 }

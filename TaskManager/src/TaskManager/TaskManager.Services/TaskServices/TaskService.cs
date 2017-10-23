@@ -9,38 +9,41 @@ using TaskManager.Data.Common.Context.Save.Contracts;
 using TaskManager.Data.Common.Repositories.Contracts;
 using TaskManager.Models;
 using TaskManager.Services.TaskServices.Contracts;
+using TaskManager.Services.UserServices.Contracts;
 
 namespace TaskManager.Services.TaskServices
 {
     public class TaskService : ITaskService
     {
         private IDbRepository<TaskModel> taskRepo;
+        private IUserService service;
         private IPrincipal identity;
         private ISaveContext saveContext;
 
         public TaskService(IDbRepository<TaskModel> taskRepo, IPrincipal identity
-            ,ISaveContext saveContext)
+            ,ISaveContext saveContext, IUserService service)
         {
             Guard.WhenArgument(taskRepo, "dbRepository").IsNull().Throw();
             Guard.WhenArgument(identity, "principal").IsNull().Throw();
             Guard.WhenArgument(saveContext, "saveContext").IsNull().Throw();
+            Guard.WhenArgument(service, "userService").IsNull().Throw();
 
             this.taskRepo = taskRepo;
             this.identity = identity;
-            this.saveContext = saveContext; 
+            this.saveContext = saveContext;
+            this.service = service;
         }
 
         public List<TaskModel> GetAll()
         {
-            return this.taskRepo.All().Where(m => m.Username.ToLower() ==
-            this.identity.Identity.Name.ToLower()).ToList();
+            var user = service.GetUser();
+            return user.Tasks.ToList();
         }
 
         public void AddTask(TaskModel model)
         {
-            model.Username = this.identity.Identity.Name;
-           
-            this.taskRepo.Add(model);
+            var user = service.GetUser();
+            user.Tasks.Add(model);
             this.saveContext.Commit();
         }
 

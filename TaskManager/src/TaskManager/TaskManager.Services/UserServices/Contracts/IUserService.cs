@@ -5,6 +5,8 @@ namespace TaskManager.Services.UserServices.Contracts
 {
     public interface IUserService
     {
+        ApplicationUser GetUser();
+
         ICollection<ApplicationUser> GetAllUsers();
 
         void DeleteUser(string username);

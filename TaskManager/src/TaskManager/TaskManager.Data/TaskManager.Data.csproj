@@ -99,17 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201710140807096_InitialCreate.cs" />
-    <Compile Include="Migrations\201710140807096_InitialCreate.Designer.cs">
-      <DependentUpon>201710140807096_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710141415559_Task.cs" />
-    <Compile Include="Migrations\201710141415559_Task.Designer.cs">
-      <DependentUpon>201710141415559_Task.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710160813551_Pesho.cs" />
-    <Compile Include="Migrations\201710160813551_Pesho.Designer.cs">
-      <DependentUpon>201710160813551_Pesho.cs</DependentUpon>
+    <Compile Include="Migrations\201710230747548_InitialCreate.cs" />
+    <Compile Include="Migrations\201710230747548_InitialCreate.Designer.cs">
+      <DependentUpon>201710230747548_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,14 +121,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710140807096_InitialCreate.resx">
-      <DependentUpon>201710140807096_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710141415559_Task.resx">
-      <DependentUpon>201710141415559_Task.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710160813551_Pesho.resx">
-      <DependentUpon>201710160813551_Pesho.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710230747548_InitialCreate.resx">
+      <DependentUpon>201710230747548_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -21,20 +21,21 @@ namespace TaskManager.Web.Controllers
 
         public ActionResult Index()
         {
-            var taskCollection = taskService.GetAll().Select(x => new TaskViewModel()
-            {
-                Title = x.Title,
-                Content = x.Content,
+            //var taskCollection = taskService.GetAll().Select(x => new TaskViewModel()
+            //{
+            //    Title = x.Title,
+            //    Content = x.Content,
                 
-            }).ToList();
+            //}).ToList();
 
-            return View(taskCollection);
+            //should return tascCollection after beign fixed!!!
+            return View();
         }
 
         [HttpPost]
         public ActionResult Create(TaskModel model)
         {
-            model.Username = taskService.GetUsername();
+           // model.Username = taskService.GetUsername();
             this.taskService.AddTask(model);
             return RedirectToAction("Index");
         }

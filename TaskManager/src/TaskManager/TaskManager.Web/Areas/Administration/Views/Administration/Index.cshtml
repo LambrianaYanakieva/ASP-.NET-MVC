@@ -4,17 +4,20 @@
     <ul>
         @foreach (var user in Model)
         {
+            if (user.isDeleted == false)
+            {
+                <li class="glyphicon-user">
+                    @using (Html.BeginForm("Delete", "Administration", FormMethod.Post, new { @class = "delete-user" }))
+                    {
+                        @Html.ValidationSummary(true)
+                        <fieldset>
+                            @user.Username<input type="hidden" name="userName" value="@user.Username" />
+                            <input type="submit" value="X">
+                        </fieldset>
+                    }
+                </li>
+            }
 
-            <li class="glyphicon-user">               
-                @using (Html.BeginForm("Delete", "Administration", FormMethod.Post, new { @class = "delete-user" }))
-                {
-                    @Html.ValidationSummary(true)
-                    <fieldset>
-                        @user.Username<input type="hidden" name="userName" value="@user.Username" />
-                        <input type="submit" value="X">
-                    </fieldset>
-                }
-            </li>
         }
     </ul>
 </div>
