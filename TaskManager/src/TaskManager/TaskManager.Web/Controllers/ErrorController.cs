@@ -11,13 +11,13 @@ namespace TaskManager.Web.Controllers
         // GET: Error
         public ActionResult Index()
         {
-            Response.ContentType = "text/html";
+           //Response.ContentType = "text/html";
             return View();
         }
 
         public ActionResult NotFound()
         {
-            Response.ContentType = "text/html";
+            //Response.ContentType = "text/html";
             return View();
         }
     }

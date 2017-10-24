@@ -4,7 +4,7 @@
     <ul>
         @foreach (var user in Model)
         {
-            if (user.isDeleted == false)
+            if (!user.isDeleted)
             {
                 <li class="glyphicon-user">
                     @using (Html.BeginForm("Delete", "Administration", FormMethod.Post, new { @class = "delete-user" }))

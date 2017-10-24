@@ -36,7 +36,7 @@ namespace TaskManager.Services.TaskServices
 
         public List<TaskModel> GetAll()
         {
-            var user = service.GetUser();
+            var user = this.service.GetUser();
             return user.Tasks.ToList();
         }
 

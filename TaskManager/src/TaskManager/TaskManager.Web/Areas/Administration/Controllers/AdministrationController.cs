@@ -6,6 +6,7 @@ using TaskManager.Web.Areas.Administration.Models;
 
 namespace TaskManager.Web.Areas.Administration.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdministrationController : Controller
     {
         private IUserService userService;
@@ -23,8 +24,7 @@ namespace TaskManager.Web.Areas.Administration.Controllers
                 .Select(u => new UserViewModel()
                 {
                     Username = u.Email
-                });
-                
+                });               
 
             return View(users);
         }

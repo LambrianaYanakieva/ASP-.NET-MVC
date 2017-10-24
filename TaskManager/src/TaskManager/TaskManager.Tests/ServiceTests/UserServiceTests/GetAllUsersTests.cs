@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using TaskManager.Data.Common.Context.Save.Contracts;
 using TaskManager.Data.Common.Repositories.Contracts;
 using TaskManager.Models;
 using TaskManager.Services.UserServices;
@@ -20,12 +21,14 @@ namespace TaskManager.Tests.ServiceTests.UserServiceTests
         {
             var repoMocked = new Mock<IUserRepository<ApplicationUser>>();
             var identityMocked = new Mock<IPrincipal>();
+            var saveContextMocked = new Mock<ISaveContext>();
 
             var users = new List<ApplicationUser>();
 
             repoMocked.Setup(m => m.All()).Returns(users.AsQueryable());
 
-            var service = new UserService(repoMocked.Object, identityMocked.Object);
+            var service = new UserService(repoMocked.Object, identityMocked.Object,
+                saveContextMocked.Object);
 
             service.GetAllUsers();
 

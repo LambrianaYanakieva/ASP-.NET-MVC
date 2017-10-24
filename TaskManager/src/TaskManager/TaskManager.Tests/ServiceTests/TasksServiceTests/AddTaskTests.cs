@@ -25,19 +25,22 @@ namespace TaskManager.Tests.ServiceTests.TasksServiceTests
             var saveContextMocked = new Mock<ISaveContext>();
             var userServiceMocked = new Mock<IUserService>();
             identityMocked.Setup(x => x.Identity.Name).Returns("Pesho");
-
+            var userMocked = new Mock<ApplicationUser>();            
             var tasks = new List<TaskModel>();
+            userMocked.Setup(m => m.Tasks).Returns(tasks);
+            userMocked.Setup(m => m.Email).Returns("test");
+
+            userServiceMocked.Setup(m => m.GetUser())
+                .Returns(userMocked.Object);           
 
             var service = new TaskService(taskRepositoryMocked.Object,
                 identityMocked.Object, saveContextMocked.Object, userServiceMocked.Object);
 
             var model = new TaskModel();
 
-            //model.Username = identityMocked.Name;
-
             service.AddTask(model);
 
-            taskRepositoryMocked.Verify(x => x.Add(model), Times.Once);
+            Assert.AreEqual(tasks.Count, 1);
         }
 
         [TestMethod]
@@ -47,20 +50,18 @@ namespace TaskManager.Tests.ServiceTests.TasksServiceTests
             var identityMocked = new Mock<IPrincipal>();
             var saveContextMocked = new Mock<ISaveContext>();
             var userServiceMocked = new Mock<IUserService>();
-
+            var userMocked = new Mock<ApplicationUser>();
             identityMocked.Setup(x => x.Identity.Name).Returns("Pesho");
-
-            var tasks = new List<TaskModel>();
-
+            
             var service = new TaskService(taskRepositoryMocked.Object,
                 identityMocked.Object, saveContextMocked.Object, userServiceMocked.Object);
 
             var model = new TaskModel();
-
-            //model.Username = identityMocked.Name;
-
+            var tasks = new List<TaskModel>();
+            userMocked.Setup(x => x.Tasks).Returns(tasks);
+            userServiceMocked.Setup(x => x.GetUser()).Returns(userMocked.Object);
             service.AddTask(model);
-
+            
             saveContextMocked.Verify(x => x.Commit(), Times.Once);
         }
 

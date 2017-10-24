@@ -4,22 +4,26 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
     using System.Security.Claims;
     using System.Threading.Tasks;
-    using System.Web;
-    using TaskManager.Data.Common.Base;
     using TaskManager.Data.Common.Base.Contracts;
 
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser, IAuditInfo, IDeletableEntity
     {
         private ICollection<TaskModel> tasks;
+        private DateTime createdOn;
+        private DateTime? modifiedOn;
+        private bool isDeleted;
+        private DateTime? deletedOn;
 
         public ApplicationUser()
         {
             this.tasks = new HashSet<TaskModel>();
+            this.createdOn = DateTime.Now;
+            this.modifiedOn = DateTime.Now;
+            this.isDeleted = false;
+            this.deletedOn = DateTime.Now;
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -45,12 +49,52 @@
             }
         }
 
-        public DateTime CreatedOn { get; set; }
+        public DateTime CreatedOn
+        {
+            get
+            {
+                return this.createdOn;
+            }
+            set
+            {
+                this.createdOn = value;
+            }
+        }
 
-        public DateTime? ModifiedOn { get; set; }
+        public DateTime? ModifiedOn
+        {
+            get
+            {
+                return this.modifiedOn;
+            }
+            set
+            {
+                this.modifiedOn = value;
+            }
+        }
 
-        public bool IsDeleted { get; set; }
+        public bool IsDeleted
+        {
+            get
+            {
+                return this.isDeleted;
+            }
+            set
+            {
+                this.isDeleted = value;
+            }
+        }
 
-        public DateTime? DeletedOn { get; set; }
+        public DateTime? DeletedOn
+        {
+            get
+            {
+                return this.deletedOn;
+            }
+            set
+            {
+                this.deletedOn = value;
+            }
+        }
     }
 }

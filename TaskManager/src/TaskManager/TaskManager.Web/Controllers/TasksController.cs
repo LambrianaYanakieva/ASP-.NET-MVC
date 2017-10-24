@@ -14,28 +14,28 @@ namespace TaskManager.Web.Controllers
 
         public TasksController(ITaskService taskService)
         {
-            Guard.WhenArgument(taskService,"TaskService").IsNull().Throw();
+            Guard.WhenArgument(taskService, "TaskService").IsNull().Throw();
             this.taskService = taskService;
         }
 
 
         public ActionResult Index()
         {
-            //var taskCollection = taskService.GetAll().Select(x => new TaskViewModel()
-            //{
-            //    Title = x.Title,
-            //    Content = x.Content,
-                
-            //}).ToList();
+            var taskCollection = taskService.GetAll().Select(x => new TaskViewModel()
+            {
+                Title = x.Title,
+                Content = x.Content,
 
-            //should return tascCollection after beign fixed!!!
-            return View();
+            }).ToList();
+
+            //should return applicationUser after beign fixed!!!
+            return View(taskCollection);
         }
 
         [HttpPost]
         public ActionResult Create(TaskModel model)
         {
-           // model.Username = taskService.GetUsername();
+            // model.Username = taskService.GetUsername();
             this.taskService.AddTask(model);
             return RedirectToAction("Index");
         }

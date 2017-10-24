@@ -1,12 +1,13 @@
-﻿@model List<TaskManager.Web.Models.Task.TaskViewModel>
+﻿@model IEnumerable<TaskManager.Web.Models.Task.TaskViewModel>
 
 <h2>Tasks</h2>
 <ul>
     @foreach (var task in Model)
     {
         <li>
+            <h2></h2>
             <h2>@task.Title</h2>
-            <h3>@task.Content</h3>    
+            <h3>@task.Content</h3>
         </li>
     }
 </ul>
